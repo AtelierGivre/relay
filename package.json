@@ -1,0 +1,25 @@
+{
+  "name": "relay",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Relay: reply routing for personal assistants",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm --workspace server run dev",
+    "dev:web": "npm --workspace client run dev",
+    "build": "npm --workspace client run build",
+    "test": "node --test server/test/*.test.js",
+    "start": "npm --workspace server run start",
+    "preview": "npm run build && npm run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

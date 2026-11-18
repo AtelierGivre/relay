@@ -1,0 +1,8 @@
+node_modules
+dist
+.env*
+.vercel
+.qa/*.png
+.qa/*.jpg
+.DS_Store
+*.log

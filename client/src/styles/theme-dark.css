@@ -1,0 +1,477 @@
+/* ==========================================================================
+   Relay: dark surface treatment
+   One warm canvas, paper kept only for the marketing artifacts that should
+   read like something printed.
+   ========================================================================== */
+
+/* Marketing mocks stay on paper tokens even though the page is dark. */
+.hero-mock,
+.hero-mock--cinema,
+.hero-float,
+.client-mock,
+.split__badge {
+  --paper: #f6f4ef;
+  --paper-2: #eeebe3;
+  --surface: #ffffff;
+  --surface-2: #fbfaf7;
+  --surface-3: #f2efe8;
+  --ink: #191b1f;
+  --ink-2: #4c525b;
+  --ink-3: #878d97;
+  --ink-4: #b2b7bf;
+  --line: #e6e1d7;
+  --line-2: #d7d1c4;
+  --green: #1f5b49;
+  --green-2: #2a7a61;
+  --green-soft: #e7f0ea;
+  --green-line: #c9ded3;
+  --clay: #a94e2b;
+  --clay-soft: #faebe2;
+  --clay-line: #efd2c2;
+  --violet: #5a4a9b;
+  --violet-soft: #edeaf8;
+  --violet-line: #d7d0ef;
+  --slate: #646b76;
+  --slate-soft: #efefec;
+  --slate-line: #dcdcd6;
+  --amber: #8f5f18;
+  --amber-soft: #fbf0dc;
+}
+
+/* Straight edges. The depth comes from light, not rotation. */
+.hero-mock,
+.client-mock {
+  transform: none;
+}
+
+/* ---------- brand ---------- */
+.logo-mark {
+  background: linear-gradient(160deg, #f4bd72 0%, #dd963d 100%);
+  color: #1b1206;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.36),
+    0 10px 26px -12px rgba(232, 162, 74, 0.6);
+}
+
+.logo-mark--ink {
+  background: var(--ink);
+  color: #141416;
+}
+
+/* ---------- shell ---------- */
+.shell {
+  background: var(--halo), var(--paper);
+}
+
+.rail {
+  background: linear-gradient(180deg, #0d0d0f 0%, #0a0a0b 100%);
+}
+
+.rail__link:hover,
+.rail__seg:hover,
+.rail__user:hover {
+  background: rgba(244, 241, 233, 0.05);
+}
+
+.rail__link.is-active {
+  background: var(--brand-soft);
+  box-shadow: inset 0 0 0 1px var(--brand-line);
+}
+
+.rail__link.is-active svg {
+  color: var(--brand);
+}
+
+.rail__seg.is-active {
+  background: rgba(244, 241, 233, 0.055);
+}
+
+.rail__client {
+  background: linear-gradient(135deg, rgba(232, 162, 74, 0.16) 0%, rgba(232, 162, 74, 0.05) 100%);
+  border: 1px solid rgba(232, 162, 74, 0.24);
+  color: var(--ink);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.rail__client:hover {
+  background: linear-gradient(135deg, rgba(232, 162, 74, 0.22) 0%, rgba(232, 162, 74, 0.08) 100%);
+}
+
+.rail__client-icon {
+  background: rgba(232, 162, 74, 0.16);
+  color: var(--brand-2);
+}
+
+.rail__client small {
+  color: var(--ink-3);
+}
+
+.topbar {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(130%);
+}
+
+.mobile-tabs {
+  background: rgba(10, 10, 11, 0.94);
+}
+
+/* ---------- avatars, pills, tags ---------- */
+.avatar {
+  background: rgba(124, 186, 158, 0.16);
+  color: #a9dcc4;
+  border-color: rgba(124, 186, 158, 0.24);
+}
+
+.avatar--clay {
+  background: rgba(220, 146, 112, 0.17);
+  color: #f0b7a0;
+}
+
+.avatar--plum {
+  background: rgba(185, 140, 187, 0.18);
+  color: #ddb6df;
+}
+
+.avatar--sage {
+  background: rgba(124, 186, 158, 0.15);
+  color: #b4ddc9;
+}
+
+.avatar--ink {
+  background: var(--ink);
+  color: #141416;
+  border-color: transparent;
+}
+
+.pill {
+  background: rgba(244, 241, 233, 0.05);
+}
+
+.pill__dot {
+  box-shadow: 0 0 0 3px rgba(124, 186, 158, 0.14);
+}
+
+.pill--dark .pill__dot {
+  background: var(--brand-2);
+  box-shadow: 0 0 0 3px rgba(232, 162, 74, 0.18);
+}
+
+.signal {
+  background: rgba(244, 241, 233, 0.045);
+  border-color: var(--line);
+}
+
+.menu-item--danger:hover {
+  background: rgba(255, 122, 107, 0.12);
+}
+
+/* ---------- inbox ---------- */
+.thread-row.is-active {
+  background: var(--brand-soft);
+}
+
+.thread-row.is-active::before {
+  background: var(--brand);
+}
+
+.segment-tab.is-active {
+  color: #141416;
+}
+
+.route-option.is-active {
+  color: #141416;
+}
+
+.detail__head {
+  background: rgba(10, 10, 11, 0.86);
+  backdrop-filter: blur(14px);
+}
+
+.detail-empty {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(232, 162, 74, 0.07), transparent 52%),
+    var(--paper);
+}
+
+/* ---------- AI brief ---------- */
+.ai-card {
+  background:
+    linear-gradient(180deg, var(--ai-soft) 0%, rgba(20, 20, 22, 0.7) 48%, var(--surface) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.ai-card--client {
+  --ai-soft: rgba(220, 146, 112, 0.09);
+}
+
+.ai-card--none {
+  --ai-soft: rgba(154, 169, 191, 0.07);
+}
+
+.ai-card__time,
+.ai-card__why {
+  border-color: var(--line);
+}
+
+/* ---------- conversation ---------- */
+.message--out .message__text {
+  color: #c8ebda;
+}
+
+.composer__caveat {
+  color: #f0b9a0;
+}
+
+.draft-note {
+  color: #c8bdf5;
+}
+
+/* ---------- review ---------- */
+.review-callout {
+  background: linear-gradient(90deg, var(--violet-soft), rgba(177, 164, 234, 0.04));
+}
+
+.review-callout__icon {
+  background: rgba(177, 164, 234, 0.14);
+}
+
+.review-callout__body strong {
+  color: #ded6ff;
+}
+
+.review-callout__body p {
+  color: #a99fd6;
+}
+
+.review-note {
+  background: rgba(244, 241, 233, 0.035);
+}
+
+/* ---------- board ---------- */
+.board-col {
+  background: rgba(244, 241, 233, 0.025);
+}
+
+.board-card {
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- accounts ---------- */
+.acct-card__warn {
+  border-color: var(--amber-soft);
+  color: var(--amber);
+}
+
+.acct-card__renew {
+  border-color: rgba(240, 179, 92, 0.3);
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.acct-card__renew:hover {
+  border-color: rgba(240, 179, 92, 0.5);
+  background: rgba(240, 179, 92, 0.2);
+}
+
+.acct-add {
+  background: rgba(244, 241, 233, 0.02);
+}
+
+.acct-add:hover {
+  border-color: var(--brand-line);
+  background: var(--brand-soft);
+}
+
+/* ---------- ask ---------- */
+.ask-answer {
+  background: linear-gradient(180deg, var(--violet-soft), rgba(177, 164, 234, 0.03));
+}
+
+.lab-ledger__w {
+  color: var(--ink-2);
+  background: rgba(244, 241, 233, 0.045);
+}
+
+.ai-ledger {
+  border-top-color: var(--line);
+}
+
+.ai-ledger__w {
+  color: var(--ink-2);
+}
+
+/* ---------- toast ---------- */
+.toast {
+  background: var(--ink);
+  color: #141416;
+  box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.85);
+}
+
+.toast__icon {
+  background: rgba(20, 20, 22, 0.1);
+}
+
+.toast__close {
+  color: rgba(20, 20, 22, 0.55);
+}
+
+.toast__close:hover {
+  color: #141416;
+}
+
+.toast--error {
+  background: #b8432f;
+  border-color: #d1583f;
+  color: #fff4ef;
+}
+
+.toast--error .toast__icon {
+  background: rgba(255, 244, 239, 0.16);
+}
+
+.toast--error .toast__close {
+  color: rgba(255, 244, 239, 0.6);
+}
+
+.toast--error .toast__close:hover {
+  color: #fff;
+}
+
+/* ---------- misc ---------- */
+.skeleton-line {
+  background: linear-gradient(90deg, #1b1b1e 0%, #26262a 40%, #1b1b1e 80%);
+}
+
+.boot {
+  background: var(--paper);
+}
+
+.modal-backdrop {
+  background: rgba(4, 4, 5, 0.62);
+}
+
+/* ---------- client experience ---------- */
+.client-view {
+  background:
+    radial-gradient(820px 460px at 86% -8%, rgba(232, 162, 74, 0.09), transparent 62%),
+    radial-gradient(680px 420px at 4% 0%, rgba(124, 186, 158, 0.045), transparent 58%),
+    var(--paper);
+}
+
+.client-top,
+.cthread-actions {
+  background: rgba(10, 10, 11, 0.88);
+}
+
+.client-assistant,
+.client-empty,
+.client-history__list {
+  background: rgba(244, 241, 233, 0.035);
+}
+
+.client-card__why {
+  background: rgba(220, 146, 112, 0.1);
+}
+
+.client-card__why p {
+  color: #f0c0aa;
+}
+
+.client-card__why strong {
+  color: #eb9d7e;
+}
+
+.client-history__row:hover {
+  background: rgba(244, 241, 233, 0.06);
+}
+
+.cthread__brief {
+  background: rgba(244, 241, 233, 0.03);
+}
+
+.cmsg__text {
+  background: var(--surface-2);
+}
+
+/* ---------- onboarding ---------- */
+.connect__side {
+  background:
+    radial-gradient(560px 420px at 88% 2%, rgba(232, 162, 74, 0.16), transparent 62%),
+    radial-gradient(480px 340px at 6% 92%, rgba(124, 186, 158, 0.1), transparent 60%),
+    linear-gradient(155deg, #16130e 0%, #0f0e0c 55%, #0a0a0b 100%);
+}
+
+.connect-card {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- landing ---------- */
+.landing {
+  background:
+    radial-gradient(900px 520px at 84% -6%, rgba(232, 162, 74, 0.07), transparent 62%),
+    radial-gradient(700px 480px at 2% 14%, rgba(124, 186, 158, 0.045), transparent 60%),
+    var(--paper);
+}
+
+.hero__title em {
+  color: var(--brand-2);
+}
+
+.how-card__num {
+  color: var(--brand);
+}
+
+.split {
+  background:
+    radial-gradient(640px 420px at 88% 6%, rgba(232, 162, 74, 0.16), transparent 62%),
+    linear-gradient(145deg, #1b1712 0%, #121110 55%, #0d0d0f 100%);
+  border: 1px solid rgba(232, 162, 74, 0.14);
+}
+
+.split .eyebrow {
+  color: rgba(244, 241, 233, 0.5);
+}
+
+.split .section-title {
+  color: #f7f4ec;
+}
+
+.split .section-sub {
+  color: rgba(244, 241, 233, 0.64);
+}
+
+.split__list li {
+  color: rgba(244, 241, 233, 0.72);
+}
+
+.split__list svg {
+  color: var(--brand);
+}
+
+.split__list strong {
+  color: #f5f2ea;
+}
+
+.split__actions .btn--ink {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+.split__actions .btn--ink:hover {
+  background: var(--brand-2);
+}
+
+.split__actions .btn--outline {
+  background: transparent;
+  border-color: rgba(244, 241, 233, 0.22);
+  color: #f1eee6;
+}
+
+.split__actions .btn--outline:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(244, 241, 233, 0.4);
+}
+
+.split__badge > svg {
+  color: var(--green);
+}

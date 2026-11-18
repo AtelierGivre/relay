@@ -243,7 +243,7 @@ Public build: https://relay-inbox-demo.vercel.app
 
 Vercel builds the client, serves it from the CDN, and runs `api/index.mjs` as a Node function for every `/api` request. The function mounts the same Express app with static serving turned off. `vercel.json` defines the build, the output directory and the two rewrites: API paths to the function, everything else to `index.html` for client-side routing. `api/index.mjs` is the only Vercel-specific file.
 
-To deploy again:
+Pushes to `main` deploy automatically. To deploy from this machine without a push:
 
 ```bash
 npx vercel deploy --prod
